@@ -10,13 +10,24 @@ public class BillingAddress implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",nullable = false)
+    @Column(name = "billingAddressId",nullable = false)
     private Long id;
     private String address;
     private String city;
     private String state;
     private String zipcode;
     private String country;
+
+    @OneToOne(mappedBy = "billingAddresses")
+    private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Long getId() {
         return id;

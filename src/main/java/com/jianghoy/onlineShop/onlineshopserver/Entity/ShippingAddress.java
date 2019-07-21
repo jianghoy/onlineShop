@@ -11,7 +11,7 @@ public class ShippingAddress implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",nullable = false)
+    @Column(name = "shippingAddressId",nullable = false)
     private Long id;
     private String address;
     private String city;

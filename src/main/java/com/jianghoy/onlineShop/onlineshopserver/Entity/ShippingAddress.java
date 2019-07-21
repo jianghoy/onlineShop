@@ -19,6 +19,9 @@ public class ShippingAddress implements Serializable {
     private String zipcode;
     private String country;
 
+    @OneToOne(mappedBy = "shippingAddress")
+    private Customer customer;
+
     public Long getId() {
         return id;
     }
@@ -65,5 +68,13 @@ public class ShippingAddress implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

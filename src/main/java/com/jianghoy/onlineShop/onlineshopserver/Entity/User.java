@@ -15,6 +15,10 @@ public class User implements Serializable {
     private String password;
     private boolean enabled;
 
+    @OneToOne(mappedBy = "user")
+    private Customer customer;
+
+
     public Long getId() {
         return id;
     }
@@ -45,5 +49,13 @@ public class User implements Serializable {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }

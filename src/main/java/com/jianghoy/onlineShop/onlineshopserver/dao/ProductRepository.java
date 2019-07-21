@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository  extends JpaRepository<Product,Long> {
+    // TODO: see if save can auto update everything
     @Override
     <S extends Product> S save(S s);
 
@@ -20,6 +21,5 @@ public interface ProductRepository  extends JpaRepository<Product,Long> {
     @Override
     List<Product> findAll();
 
-    @Query("")
-    void updateProduct(Product product);
+
 }

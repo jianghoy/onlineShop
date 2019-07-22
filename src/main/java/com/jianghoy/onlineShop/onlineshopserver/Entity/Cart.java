@@ -6,7 +6,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "carts")
+@Table(name = "cart")
 public class Cart implements Serializable {
 
     @Id
@@ -14,10 +14,10 @@ public class Cart implements Serializable {
     @Column(name = "cartId", nullable = false)
     private Long id;
 
-    @OneToOne(mappedBy = "carts")
+    @OneToOne(mappedBy = "cart")
     private Customer customer;
 
-    @OneToMany(mappedBy = "carts",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<CartItem> cartItemList;
     private double totalPrice;
 

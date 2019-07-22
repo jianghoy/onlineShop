@@ -20,7 +20,7 @@ public class TestProductRepository {
 
     @Before
     public void setUp(){
-        Product sonyASevenRIV = new Product();
+        sonyASevenRIV = new Product();
         sonyASevenRIV.setProductCategory("camera");
         sonyASevenRIV.setProductDescription("latest sony camera");
         sonyASevenRIV.setProductManufacturer("Sony");
@@ -39,6 +39,7 @@ public class TestProductRepository {
     }
     @Test
     public void testSave() {
+        // done
         sonyASevenRIV = productRepository.save(sonyASevenRIV);
         assertThat(productRepository.findById(sonyASevenRIV.getId()))
                 .get().isEqualTo(sonyASevenRIV);

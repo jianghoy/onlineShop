@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "billingAddresses")
+@Table(name = "billingAddress")
 public class BillingAddress implements Serializable {
 
     @Id
@@ -18,7 +18,7 @@ public class BillingAddress implements Serializable {
     private String zipcode;
     private String country;
 
-    @OneToOne(mappedBy = "billingAddresses")
+    @OneToOne(mappedBy = "billingAddress")
     private Customer customer;
 
     public Customer getCustomer() {
